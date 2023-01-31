@@ -11,10 +11,12 @@ ext {
 
 android {
     compileSdkVersion 32
-
     packagingOptions {
-        pickFirst '**/*.so'
+        jniLibs {
+            pickFirsts += ['**/*.so']
+        }
     }
+
 
     defaultConfig {
         configurations.all {
@@ -72,6 +74,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    namespace 'com.kodi.app'
 }
 
 dependencies {
